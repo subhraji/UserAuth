@@ -34,7 +34,7 @@ class SignUpFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         signInClick.setOnClickListener {
-            findNavController().navigate(R.id.signInFragment)
+            findNavController().navigateUp()
         }
 
         signUpBtn.setOnClickListener {

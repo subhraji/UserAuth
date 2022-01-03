@@ -37,7 +37,7 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        signUpClick.setOnClickListener {
+        signInBtn.setOnClickListener {
 
             signInViewModel.signIn(etEmail.text.toString(),etPassword.text.toString()).observe(viewLifecycleOwner, androidx.lifecycle.Observer { outcome->
                 when(outcome){
@@ -64,9 +64,9 @@ class SignInFragment : Fragment() {
 
         }
 
-        signInBtn.setOnClickListener {
-            val intent = Intent(requireActivity(), MainActivity::class.java)
-            startActivity(intent)
+        signUpClick.setOnClickListener {
+            findNavController().navigate(R.id.signUpFragment)
+
         }
     }
 
